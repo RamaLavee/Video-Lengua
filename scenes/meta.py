@@ -1,0 +1,325 @@
+"""Guion técnico: metadatos de cada escena (fuente única para el render y la documentación).
+
+Campos: id, titulo, dur (segundos), trans (transición de entrada: tipo, duración), libro (acontecimiento
+y páginas del PDF), lugar, personajes, composicion, accion, emocion, camara, movimiento, luz, sonido,
+funcion, salida.
+"""
+
+SCENES = [
+    dict(id='s01', titulo='Lima', dur=10, trans=('black', 1.2),
+         libro='Ubicación de Emilia (Lima, Perú; págs. 25–28).',
+         lugar='Lima: acantilados de la Costa Verde, mar Pacífico, edificios con balcones.',
+         personajes='—',
+         composicion='Gran plano general ilustrado por capas: cielo gris rosado, mar, acantilado, edificios; '
+                     'una ventana con luz cálida en primer término.',
+         accion='Vuelan pelícanos, el mar respira, se enciende la ventana del departamento de Emilia.',
+         emocion='Calma cotidiana, curiosidad.',
+         camara='Paneo descendente lento con paralaje y acercamiento a la ventana.',
+         movimiento='Olas, nubes, pelícanos, cortina de la ventana.',
+         luz='Atardecer gris perla de Lima; ventana cálida.',
+         sonido='Mar lejano, ciudad suave; entra la música (piano y caja de música).',
+         funcion='Situar al espectador en Lima. Rótulo «Lima, Perú».',
+         salida='Fundido encadenado hacia el interior.'),
+    dict(id='s02', titulo='El regalo del hijo', dur=13, trans=('fade', 0.9),
+         libro='Emilia ingresa el número de serie de la tarjeta que le regaló su hijo (pág. 10).',
+         lugar='Pasillo del departamento de Emilia: escritorio, computadora vieja de carcasa amarillenta, silla de mimbre.',
+         personajes='Emilia.',
+         composicion='Plano medio lateral: Emilia sentada al escritorio, a la derecha el monitor. Paquete con celofán y '
+                     'sellos de Hong Kong; estante con cajas de regalos sin abrir.',
+         accion='Abre el paquete, saca la tarjeta, se acomoda los anteojos, se toca la espalda dolorida y teclea el código '
+                'con un dedo. Mira el reloj (casi las seis).',
+         emocion='Fastidio leve, concentración, resignación.',
+         camara='Leve travelling lateral y acercamiento al teclado.',
+         movimiento='Manos, cabeza, parpadeo; péndulo del reloj.',
+         luz='Lámpara cálida, luz de tarde.',
+         sonido='Tictac del reloj, celofán, teclas.',
+         funcion='Presentar a Emilia, su soledad y el vínculo con un hijo lejano que le manda regalos.',
+         salida='Corte al monitor.'),
+    dict(id='s03', titulo='La conexión', dur=13, trans=('cut', 0),
+         libro='«Conexión establecida», «despertar», la cocina desordenada, la chica de pelo mojado y el traductor (págs. 10–11).',
+         lugar='Lima (monitor) → Erfurt (vista de la cámara del kentuki).',
+         personajes='Emilia, Eva.',
+         composicion='Sobre el hombro de Emilia; el monitor muestra un ícono de ojo. Al entrar en la pantalla: '
+                     'interfaz del controlador con íconos a los costados.',
+         accion='Clic en el ojo; la cámara entra en la pantalla; cocina ajena con cervezas, platos y revistas; '
+                'Eva se acerca con el pelo mojado y habla (franja amarilla del traductor). Emilia, frente a la '
+                'pantalla, responde «yes» sin sonido.',
+         emocion='Desconcierto que se vuelve sonrisa.',
+         camara='Zoom continuo hacia el interior del monitor; contraplano desde la pantalla hacia Emilia.',
+         movimiento='Eva se inclina hacia la cámara, gesticula; Emilia se acerca a la pantalla.',
+         luz='Resplandor frío del monitor sobre la cara cálida de Emilia.',
+         sonido='Pitido de conexión, zumbido suave del kentuki.',
+         funcion='Mostrar el mecanismo: la computadora de Emilia abre una ventana a otra casa.',
+         salida='Corte a pantalla dividida.'),
+    dict(id='s04', titulo='Cerrar los ojos', dur=12, trans=('cut', 0),
+         libro='El juego de dormir/despertar y el dedo que toca la nariz (págs. 11–12).',
+         lugar='Pantalla dividida: Lima | Erfurt.',
+         personajes='Emilia, Eva.',
+         composicion='Izquierda: Emilia al teclado (cálido). Derecha: vista del kentuki (frío) con la interfaz.',
+         accion='Eva lee el manualito y se tapa los ojos; Emilia cierra los suyos de verdad y luego toca el ícono '
+                '«dormir»: pantalla negra; Eva aplaude; «despertar»; Eva acerca el dedo a la lente; Emilia avanza '
+                'y retrocede con las flechas.',
+         emocion='Juego, complicidad, sorpresa compartida.',
+         camara='Fija, con leves empujes.',
+         movimiento='Manos sobre las flechas, la cámara del kentuki avanza y retrocede.',
+         luz='Cálida / fría.',
+         sonido='Clics, ruedas del kentuki, aplauso suave.',
+         funcion='Hacer visible que Emilia maneja un cuerpo a distancia.',
+         salida='Corte.'),
+    dict(id='s05', titulo='Eres una conejita', dur=12, trans=('cut', 0),
+         libro='Eva le muestra la caja: Emilia es un kentuki conejo rosa y negro (pág. 12).',
+         lugar='Erfurt (vista del kentuki) → Lima → Erfurt (plano objetivo).',
+         personajes='Eva, Emilia, la conejita.',
+         composicion='Eva sostiene la caja vacía con la ilustración de la conejita. Contraplano de Emilia. '
+                     'Plano objetivo: la conejita real sobre el piso de Eva.',
+         accion='Emilia se lleva la mano a la cabeza como buscando orejas; corte por movimiento: la conejita '
+                'inclina la cabeza igual que ella y avanza hacia Eva.',
+         emocion='Asombro, ternura, comicidad leve.',
+         camara='Acercamiento a la caja; corte por coincidencia de gesto.',
+         movimiento='Orejas, ruedas, inclinación de cabeza sincronizada.',
+         luz='Fría y luminosa en Erfurt.',
+         sonido='Pequeño chillido del kentuki.',
+         funcion='Establecer la dualidad central: persona en Lima / cuerpo de peluche en Erfurt.',
+         salida='Fundido.'),
+    dict(id='s06', titulo='La ventana', dur=12, trans=('fade', 0.8),
+         libro='La cucha fucsia; Eva la alza hacia la ventana: cúpulas, canales, luz roja; «Puedes llamarme Eva» (págs. 25–26).',
+         lugar='Erfurt: departamento de Eva y vista de la ciudad. Contraplano en Lima.',
+         personajes='Eva, la conejita, Emilia.',
+         composicion='La conejita en la cucha fucsia de pintitas; Eva la levanta; vista subjetiva de la ciudad '
+                     'al atardecer; cara de Emilia iluminada de rojo.',
+         accion='Eva alza el kentuki; la ciudad aparece; Emilia abre grandes los ojos; después mueve la conejita '
+                'de un lado a otro pidiendo que la alcen otra vez.',
+         emocion='Maravilla: Emilia nunca salió del Perú.',
+         camara='Grúa ascendente subjetiva; paneo sobre los techos.',
+         movimiento='Pájaros, agua del canal, cortina; ruedas que van y vienen.',
+         luz='Atardecer rojo intenso.',
+         sonido='Campanas lejanas, viento; la música se abre.',
+         funcion='Ubicar el otro espacio. Rótulo «Erfurt, Alemania».',
+         salida='Fundido encadenado al mapa.'),
+    dict(id='s07', titulo='El mapa y las amigas', dur=11, trans=('fade', 0.8),
+         libro='Emilia descubre que está en Erfurt; café de los jueves: Gloria entusiasmada, Inés horrorizada (págs. 26–27).',
+         lugar='Mapa ilustrado; café en Lima después de natación.',
+         personajes='Emilia, Gloria, Inés.',
+         composicion='Mapa con un hilo punteado de Lima a Erfurt; luego mesa de café con tres amigas y bolsos de natación.',
+         accion='El hilo cruza el océano; en el café Emilia cuenta, Gloria aplaude, Inés golpea la mesa con el índice.',
+         emocion='Orgullo, entusiasmo / desconfianza.',
+         camara='Travelling sobre el mapa; plano de conjunto con leve acercamiento.',
+         movimiento='Gestos, tazas, vapor.',
+         luz='Mañana clara en Lima.',
+         sonido='Murmullo de café sin voces inteligibles: solo tazas y cucharitas.',
+         funcion='Mostrar la distancia y las dos miradas sobre los kentukis (Gloria / Inés).',
+         salida='Barrido de página.'),
+    dict(id='s08', titulo='La rutina', dur=15, trans=('paper', 1.0),
+         libro='Té después de lavar los platos; nota en la pata de la silla; juguetes; zapatos; cena con noticiero; '
+               'escapadas bajo la mesa; Emilia ronronea en el súper (págs. 27–29).',
+         lugar='Lima y Erfurt alternados.',
+         personajes='Emilia, Eva, la conejita.',
+         composicion='Montaje de viñetas encadenadas: té y computadora; nota fucsia en la pata de una silla; ovillo y '
+                     'ratoncito; sofá con la conejita entre almohadones frente a la tele; Eva persiguiéndola bajo la mesa.',
+         accion='La conejita sigue a Eva, mira sus zapatos, se acurruca a su lado; Eva ríe atrapándola.',
+         emocion='Cariño creciente, alegría de «tener dos vidas».',
+         camara='Paneos cortos y encadenados.',
+         movimiento='Ruedas, orejas, manos de Eva, vapor del té.',
+         luz='Atardecer y noche cálidos en Erfurt.',
+         sonido='Ronroneo del kentuki, tazas, tele muy baja sin voces.',
+         funcion='Construir el vínculo afectivo entre Emilia y Eva.',
+         salida='Fundido.'),
+    dict(id='s09', titulo='La batería', dur=11, trans=('fade', 0.8),
+         libro='El hijo, por teléfono, le explica la batería y la «caducidad programada»; Eva la carga cada noche '
+               'mientras Emilia duerme (págs. 29–30).',
+         lugar='Supermercado de Lima; Hong Kong; dormitorio de Emilia / living de Eva de noche.',
+         personajes='Emilia, el hijo, Eva, la conejita.',
+         composicion='Emilia con el carrito y el teléfono; recuadro del hijo en Hong Kong; ícono de batería que baja. '
+                     'Pantalla dividida nocturna: Emilia dormida / Eva poniendo la conejita en el cargador.',
+         accion='Emilia se alarma; luego comprende y sonríe; acomoda los duraznos arriba de las latas.',
+         emocion='Susto → ternura.',
+         camara='Plano medio; división de pantalla.',
+         movimiento='Luz del cargador que pasa de roja a verde.',
+         luz='Fluorescente del súper; noche azul.',
+         sonido='Teléfono, pitido de batería baja, respiración tranquila.',
+         funcion='Mostrar el cuidado de Eva y la dependencia del kentuki. Rótulo «Hong Kong».',
+         salida='Fundido a negro.'),
+    dict(id='s10', titulo='Cuatro pies', dur=16, trans=('black', 1.0),
+         libro='Cuatro pies descalzos; el hombre desnudo cocina; Eva se va a la ducha; el hombre la persigue y la '
+               'levanta (págs. 61–62).',
+         lugar='Erfurt (vista del kentuki) / Lima de noche.',
+         personajes='Emilia (camisón), Eva, el hombre (Klaus).',
+         composicion='Cámara tirada en la cucha: pies descalzos. La desnudez se sugiere: muebles en primer plano, '
+                     'toalla, encuadres cortados. Emilia se cierra el camisón.',
+         accion='Emilia chilla; Eva la endereza y se va al baño; el hombre fríe huevos; la descubre, la persigue por '
+                'el pasillo y la alza: su cara enorme llena la pantalla.',
+         emocion='Alarma, incomodidad, miedo.',
+         camara='Subjetiva baja, temblorosa en la persecución.',
+         movimiento='Sartén, cáscaras de huevo, pasos, ruedas a máxima velocidad.',
+         luz='La paleta se enfría; luz dura de cocina.',
+         sonido='Ducha, pasos, chillidos del kentuki; la música se vuelve tensa.',
+         funcion='Primer conflicto: un intruso en la casa de Eva.',
+         salida='Corte.'),
+    dict(id='s11', titulo='El robo y el agua', dur=11, trans=('cut', 0),
+         libro='El hombre saca dinero de la billetera de Eva; la mete bajo el chorro de la canilla (pág. 62).',
+         lugar='Erfurt (vista del kentuki) / Lima.',
+         personajes='Klaus, Emilia.',
+         composicion='Desde la mesa: manos que abren la billetera y sacan billetes. Luego la canilla y el chorro.',
+         accion='Emilia chilla y gira en círculos; él la atrapa y la pone bajo el agua; gotas sobre la lente.',
+         emocion='Indignación, impotencia.',
+         camara='Subjetiva; la imagen se distorsiona con el agua.',
+         movimiento='Billetes, chorro, salpicaduras.',
+         luz='Fría.',
+         sonido='Agua, chillidos breves.',
+         funcion='Mostrar la amenaza concreta y la impotencia del kentuki.',
+         salida='Corte.'),
+    dict(id='s12', titulo='La cámara', dur=13, trans=('cut', 0),
+         libro='Eva vuelve: solo hay que cuidarle los ojos, «ahí está la cámara»; Emilia se emociona; el hombre deja '
+               'de sonreír y la mira a los ojos (págs. 62–63).',
+         lugar='Erfurt / Lima.',
+         personajes='Eva (con toalla), Klaus, Emilia.',
+         composicion='Eva limpia con delicadeza los ojos de la conejita y los señala. Contraplano: Emilia con la mano '
+                     'en el pecho. Sofá: el hombre trae el plato y mira fijo a la cámara.',
+         accion='Eva asiente señalando a la conejita; el hombre se queda serio; acercamiento lento a sus ojos claros.',
+         emocion='Emoción → inquietud.',
+         camara='Acercamiento lento final.',
+         movimiento='Toalla, pelo húmedo.',
+         luz='Contraste frío.',
+         sonido='Silencio con nota grave sostenida.',
+         funcion='Eva reconoce que hay alguien adentro; el hombre también lo sabe ahora.',
+         salida='Fundido a negro.'),
+    dict(id='s13', titulo='El kentuki del hijo', dur=11, trans=('black', 0.9),
+         libro='El hijo confiesa que tiene su propio kentuki; la mujer mayor le mandó tortas; Emilia siente celos: '
+               '«tener» o «ser» (págs. 87–89).',
+         lugar='Comedor de Emilia (mesa de fórmica) / Hong Kong.',
+         personajes='Emilia, el hijo, la mujer de las botas (en fotos).',
+         composicion='Emilia con el teléfono frente a la mesa; recuadro del hijo en su balcón con su kentuki y cajas de '
+                     'torta; en el teléfono, la foto de una mujer robusta con botas.',
+         accion='Emilia escucha, mira la foto y baja la vista; sopla el té.',
+         emocion='Celos, tristeza contenida.',
+         camara='Plano medio con recuadro.',
+         movimiento='Vapor del té, luces de Hong Kong.',
+         luz='Lima fría de invierno; neón en Hong Kong.',
+         sonido='Bip de mensaje.',
+         funcion='Mostrar que el hijo es «amo» y Emilia «ser»; su soledad.',
+         salida='Fundido.'),
+    dict(id='s14', titulo='Klaus Berger', dur=18, trans=('fade', 0.8),
+         libro='La camiseta roja con el número 4; Emilia lo busca en internet y le escribe; él responde y la llama; '
+               'el insulto en el espejo; Eva la encierra en la bañera (págs. 117–120).',
+         lugar='Lima / Erfurt.',
+         personajes='Emilia, Klaus, Eva.',
+         composicion='Klaus en el sofá con la camiseta roja n.º 4; la computadora de Emilia con fotos de jugadores; el '
+                     'teléfono con burbujas de mensaje ilegibles; el espejo con un garabato rojo agresivo a la altura '
+                     'de un kentuki; la bañera oscura.',
+         accion='Emilia escribe, se arrepiente, el teléfono vibra: llama Klaus y ella lo deja boca abajo. En Erfurt, el '
+                'espejo pintado; Eva llega, se enoja, lleva la conejita a la bañera y apaga la luz.',
+         emocion='Determinación → miedo → injusticia.',
+         camara='Montaje alterno, subjetivas.',
+         movimiento='Lápiz labial en el piso, luz que se apaga.',
+         luz='Cada vez más fría y contrastada.',
+         sonido='Campanitas del teléfono, vibración, silencio.',
+         funcion='La intervención de Emilia sale mal y deteriora su relación con Eva.',
+         salida='Pantalla negra; corte con el timbre.'),
+    dict(id='s15', titulo='El regalo de Gloria', dur=10, trans=('cut', 0),
+         libro='Gloria le regala un kentuki usado: una conejita idéntica (págs. 120–121).',
+         lugar='Comedor y entrada del departamento de Emilia.',
+         personajes='Emilia, Gloria, la conejita de Lima.',
+         composicion='Gloria entra con una caja algo sucia; dentro, envuelta en un repasador, una conejita idéntica con '
+                     'los ojos cerrados.',
+         accion='Emilia duda, sonríe sin querer; Gloria aplaude y enchufa el cargador junto a la puerta.',
+         emocion='Reticencia → ternura.',
+         camara='Plano de conjunto, acercamiento a la conejita dormida.',
+         movimiento='Papel de regalo, repasador.',
+         luz='Cálida de tarde.',
+         sonido='Timbre, papel.',
+         funcion='Emilia pasa a «tener» un kentuki.',
+         salida='Fundido a negro.'),
+    dict(id='s16', titulo='Las tres y diez', dur=12, trans=('black', 0.9),
+         libro='Se despierta de una pesadilla; a las 3:10 se conecta: Eva la perdonó y la puso a cargar; foto de Eva con '
+               'su conejita en la heladera; Emilia le saca una foto a la pantalla (pág. 121).',
+         lugar='Dormitorio y pasillo de Emilia de noche / cocina de Eva de mañana.',
+         personajes='Emilia, la conejita de Lima (dormida), Eva (en foto).',
+         composicion='Reloj en las 3:10; la conejita de Lima en su cargador con ojos cerrados; el monitor muestra la '
+                     'cocina de Eva iluminada por la mañana y la heladera con la foto.',
+         accion='Emilia se sienta, acerca la mirada, se emociona y fotografía la pantalla con su teléfono.',
+         emocion='Alivio, ternura.',
+         camara='Acercamiento a la foto de la heladera.',
+         movimiento='Luz del cargador, flash del teléfono.',
+         luz='Noche azul en Lima / mañana dorada en Erfurt.',
+         sonido='Reloj, pitido de carga, obturador.',
+         funcion='Reconciliación: el vínculo con Eva parece restaurado.',
+         salida='Barrido de página.'),
+    dict(id='s17', titulo='Ama y ser', dur=13, trans=('paper', 1.0),
+         libro='Una semana de convivencia; fotos impresas por toda la casa; los llamados de Klaus; a las dos, las dos '
+               'frente a la computadora (págs. 145–147).',
+         lugar='Casa de Emilia.',
+         personajes='Emilia (bata y luego de día), la conejita de Lima (hebilla dorada).',
+         composicion='Heladera con la foto impresa en el centro; la conejita sigue a Emilia a la cocina; Emilia atiende '
+                     'el teléfono con los ojos cerrados mientras la conejita mira fijo el número encendido; a las dos de '
+                     'la tarde la sube al escritorio frente a la pantalla de Erfurt.',
+         accion='Emilia le muestra Erfurt a su conejita.',
+         emocion='Armonía aparente, inquietud sutil.',
+         camara='Paneos suaves; plano detalle de los ojos del kentuki reflejando el teléfono.',
+         movimiento='Ruedas, vapor del té, teléfono que vibra.',
+         luz='Cálida, con un borde frío.',
+         sonido='Ronroneo, vibración.',
+         funcion='Emilia es «ama» y «ser» a la vez; la conejita observa (pista).',
+         salida='Fundido.'),
+    dict(id='s18', titulo='La llamada', dur=16, trans=('fade', 0.8),
+         libro='Klaus recibe una llamada extraña y mira al kentuki; Eva vuelve de yoga; ven fotos en el teléfono; Eva '
+               'sonríe perversa y llama a Emilia; la conejita le acerca el teléfono (págs. 147–149).',
+         lugar='Erfurt (pantalla) / Lima.',
+         personajes='Klaus, Eva, Emilia, la conejita de Lima.',
+         composicion='En la pantalla: Klaus atento al teléfono junto a la ventana; Eva con la colchoneta; en el teléfono '
+                     'de Klaus, fotos de la casa de Emilia llena de fotos. Eva sentada en el piso mirando a la cámara. '
+                     'En Lima: la conejita empuja el teléfono hacia la mano de Emilia.',
+         accion='Emilia atiende; franjas amarillas del traductor; su cara se transforma; vuelca el té y se pone de pie.',
+         emocion='Desconcierto → humillación.',
+         camara='Contraplanos cada vez más cerrados.',
+         movimiento='Té derramado, teléfono.',
+         luz='Fría, dura.',
+         sonido='Vibración, la música se reduce a un pulso grave.',
+         funcion='Clímax: la intimidad de Emilia también fue espiada.',
+         salida='Corte.'),
+    dict(id='s19', titulo='Conexión finalizada', dur=10, trans=('cut', 0),
+         libro='Emilia apaga la pantalla, busca el botón rojo y anula la conexión: «Conexión finalizada» (pág. 149).',
+         lugar='Lima: escritorio del pasillo.',
+         personajes='Emilia.',
+         composicion='La mano sobre el botón rojo; gran cartel rojo (solo ícono) en el monitor; las manos aferradas al '
+                     'respaldo de mimbre.',
+         accion='Apaga, vuelve a prender, acepta la desconexión; queda inmóvil.',
+         emocion='Espanto, agotamiento.',
+         camara='Plano detalle y plano medio fijo.',
+         movimiento='Mínimo: respiración, mimbre que cruje.',
+         luz='Rojo del cartel sobre su cara.',
+         sonido='Clic; silencio.',
+         funcion='Emilia corta el vínculo con Erfurt.',
+         salida='Corte.'),
+    dict(id='s20', titulo='La pileta', dur=14, trans=('cut', 0),
+         libro='La conejita la mira como juzgándola; Emilia la lleva a la cocina y la ahoga bajo el chorro hasta que '
+               'la luz verde deja de titilar (pág. 149).',
+         lugar='Lima: escritorio y cocina.',
+         personajes='Emilia, la conejita de Lima.',
+         composicion='La conejita en la otra punta del escritorio, ojos fijos. Emilia de espaldas en la pileta, la canilla '
+                     'abierta; solo se ve la lucecita verde y las ruedas. Plano final: la cocina, la canilla goteando, la '
+                     'heladera con la foto de Eva y su conejita.',
+         accion='La alza de las orejas, abre la canilla, la sostiene bajo el agua; la luz verde titila y se apaga.',
+         emocion='Rencor, vacío.',
+         camara='Acercamiento lento; plano final fijo que se aleja.',
+         movimiento='Agua, ruedas que giran y se detienen, luz verde.',
+         luz='Fría y apagada.',
+         sonido='Agua, chillido ahogado breve, gota; silencio final.',
+         funcion='Desenlace: Emilia repite con su conejita lo que Klaus le hizo a ella.',
+         salida='Fundido a negro.'),
+]
+
+
+def timeline():
+    """Devuelve escenas con inicio y fin calculados (las transiciones encadenadas se solapan)."""
+    out = []
+    t = 0.0
+    for i, s in enumerate(SCENES):
+        kind, d = s['trans']
+        if i > 0 and kind in ('fade', 'paper'):
+            t -= d
+        out.append(dict(s, start=round(t, 3), end=round(t + s['dur'], 3)))
+        t += s['dur']
+    return out
+
+
+TOTAL = timeline()[-1]['end']
