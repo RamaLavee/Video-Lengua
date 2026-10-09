@@ -2,10 +2,33 @@
 from scenes.common import *
 
 
+def photo_eva(c, w, h):
+    """Foto de la pantalla: Eva sola, sonriendo (las fotos de Klaus están en la mesita de luz, no aquí)."""
+    vgrad_rect(c, 0, 0, w, h, '#bcd9d2', '#a9cbc4')
+    c.save()
+    c.scale(w / 400.0, h / 300.0)
+    EVA.draw(c, 200, 120 + 868 * 0.42, 0.42, view='front', t=0, expr='happy', bust=True, idle=0)
+    c.restore()
+
+
+def photo_erfurt(c, w, h):
+    """Foto de la pantalla: Erfurt al atardecer desde la ventana de Eva."""
+    vgrad_rect(c, 0, 0, w, h, '#ec7a52', '#f6b86a')
+    c.save()
+    c.scale(w / 400.0, h / 300.0)
+    for i in range(6):
+        x = i * 70
+        c.drawRect(skia.Rect(x, 190, x + 60, 300), paint('#e8c4a0', 1))
+        c.drawPath(poly([(x - 6, 190), (x + 30, 150), (x + 66, 190)]), paint('#c25a48', 1))
+    E._dom_icon(c, 280, 150, 0.35, '#6a3a4a')
+    c.restore()
+
+
+FRIDGE_OTHERS = [photo_eva, photo_erfurt, PR.photo_eva_rabbit, photo_eva, photo_erfurt]
+
+
 def fridge(c, t, n=6):
-    L.fridge_photos(c, t, n, PR.photo_eva_rabbit,
-                    [PR.photo_klaus, PR.photo_eva_rabbit, lambda cc, w, h: E.erfurt_panorama(cc, 0) if False else
-                     vgrad_rect(cc, 0, 0, w, h, '#f6b86a', '#c84a4a'), PR.photo_eva_rabbit, PR.photo_klaus])
+    L.fridge_photos(c, t, n, PR.photo_eva_rabbit, FRIDGE_OTHERS)
 
 
 def kitchen(c, t):

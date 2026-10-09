@@ -1,6 +1,7 @@
 """S20 — La pileta: la conejita de Lima la mira «como juzgándola»; Emilia la ahoga bajo el chorro de agua
 hasta que la luz verde de la base deja de titilar. (Se muestra con pudor: de espaldas, el agua, la luz.)"""
 from scenes.common import *
+from scenes.s17_amayser import FRIDGE_OTHERS
 
 COLD_LIMA = grade_filter(sat=0.6, bright=0.92, tint=(0.93, 0.98, 1.08))
 
@@ -95,8 +96,7 @@ def wide(c, t):
     with layer(c, 1.0, cfilter=COLD_LIMA):
         with U.cam(c, kf(t, [(0, 2480), (5.4, 2650)]), kf(t, [(0, 520), (5.4, 500)]), kf(t, [(0, 1.45), (5.4, 1.08)])):
             L.home_bg(c, t, sky='#a8acb6')
-            L.fridge_photos(c, t, 6, PR.photo_eva_rabbit, [PR.photo_klaus, PR.photo_eva_rabbit, PR.photo_klaus,
-                                                           PR.photo_eva_rabbit, PR.photo_klaus])
+            L.fridge_photos(c, t, 6, PR.photo_eva_rabbit, FRIDGE_OTHERS)
             for k in range(3):
                 xo = 2378 + (k - 1) * 5
                 line(c, [(xo, 485), (xo, 590)], '#e8f6ff', 8, 0.5)
