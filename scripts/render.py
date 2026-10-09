@@ -143,7 +143,7 @@ def render_chunk(args):
         return i, 'cache', 0.0
     t_start = time.time()
     cmd = ['ffmpeg', '-y', '-loglevel', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgba', '-s', '%dx%d' % (W, H),
-           '-r', str(FPS), '-i', '-', '-c:v', 'libx264', '-preset', 'slow', '-crf', '17', '-tune', 'animation',
+           '-r', str(FPS), '-i', '-', '-c:v', 'libx264', '-preset', 'slow', '-crf', '18', '-tune', 'animation',
            '-pix_fmt', 'yuv420p', '-profile:v', 'high', '-level', '4.1', '-g', str(FPS * 2),
            '-x264-params', 'keyint=%d:min-keyint=%d:scenecut=0:open-gop=0' % (FPS * 2, FPS),
            '-color_primaries', 'bt709', '-color_trc', 'bt709', '-colorspace', 'bt709',

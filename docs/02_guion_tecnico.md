@@ -1,6 +1,6 @@
 # Guion técnico — *Emilia* (adaptación visual de *Kentukis*)
 
-Duración total: **4:06.10** (246.10 s). 20 escenas. Tiempos tomados de `scenes/meta.py`, la misma fuente que usa el renderizador; las transiciones encadenadas se superponen, por eso una escena puede empezar antes de que termine la anterior.
+Duración total: **4:08.10** (248.10 s). 20 escenas. Tiempos tomados de `scenes/meta.py`, la misma fuente que usa el renderizador; las transiciones encadenadas se superponen, por eso una escena puede empezar antes de que termine la anterior.
 
 | # | Escena | Inicio | Fin | Duración | Bloque |
 |---|---|---|---|---|---|
@@ -23,7 +23,7 @@ Duración total: **4:06.10** (246.10 s). 20 escenas. Tiempos tomados de `scenes/
 | 17 | Ama y ser | 3:13.90 | 3:26.90 | 13.0 s | 5 · Consecuencias |
 | 18 | La llamada | 3:26.10 | 3:42.10 | 16.0 s | 5 · Consecuencias |
 | 19 | Conexión finalizada | 3:42.10 | 3:52.10 | 10.0 s | 6 · Desenlace |
-| 20 | La pileta | 3:52.10 | 4:06.10 | 14.0 s | 6 · Desenlace |
+| 20 | La pileta | 3:52.10 | 4:08.10 | 16.0 s | 6 · Desenlace |
 
 ## 1. Lima (`s01`)
 
@@ -369,7 +369,7 @@ Duración total: **4:06.10** (246.10 s). 20 escenas. Tiempos tomados de `scenes/
 
 ## 20. La pileta (`s20`)
 
-- **Tiempo:** 3:52.10 – 4:06.10 (14.0 s)
+- **Tiempo:** 3:52.10 – 4:08.10 (16.0 s)
 - **Acontecimiento del libro:** La conejita la mira como juzgándola; Emilia la lleva a la cocina y la ahoga bajo el chorro hasta que la luz verde deja de titilar (pág. 149).
 - **Ubicación:** Lima: escritorio y cocina.
 - **Personajes:** Emilia, la conejita de Lima.

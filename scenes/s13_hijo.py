@@ -61,7 +61,8 @@ def draw(c, t):
                 L.home_bg(c, t, sky='#c8ccd2')
             c.drawRect(skia.Rect(0, 0, W, H), paint('#2a2028', 0.35))
         pop = prog(tl, 0.3, 0.8, ease_back)
-        PR.phone(c, 960, 560 + (1 - pop) * 200, 3.6, rot=-4,
+        drift = tl * 0.06
+        PR.phone(c, 960 - tl * 12, 560 + (1 - pop) * 200 - tl * 8, 3.6 * (1 + drift), rot=-4 + tl * 0.8,
                  screen=U.photo_screen(boots_photo) if tl > 0.4 else U.chat_screen([(-1, prog(tl, 0, 0.4), 131)]))
         hand = EMI.s['skin']
         hy = 900 + (1 - pop) * 200

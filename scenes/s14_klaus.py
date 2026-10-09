@@ -9,7 +9,7 @@ def cucha_feed(t, klaus=True, mirror=False, eva=None, bag=True):
         with U.cam(c, cx, 560, 1.0):
             E.pov_bg(c, t, bag=bag)
             if klaus:
-                KLAUS.draw(c, 2650, 800, 0.95, view='side', t=t, sit=1, seat_h=340, knee_x=190, expr='neutral',
+                KLAUS.draw(c, 2640, 790, 0.7, view='side', t=t, sit=1, seat_h=440, knee_x=210, expr='neutral',
                            look=(0.8, 0), hand_L=(160, -470), handshape_L='hold',
                            hold_L=lambda cc: PR.bottle(cc, 0, 20, 0.6))
                 E.SOFA  # el sofá ya está en el fondo
@@ -42,7 +42,8 @@ def phone_closeup(c, t, screen, face_down=False, vib=0.0, under=None):
             L.desk_back(c, t, screen_fn=browser(t, 1.0))
             L.desk_front(c, t)
     c.drawRect(skia.Rect(0, 0, W, H), paint('#2a2028', 0.3))
-    PR.phone(c, 960, 560, 3.6, rot=-4, screen=screen, face_down=face_down, vibrate=vib, t=t)
+    PR.phone(c, 960 + t * 10, 560 - t * 6, 3.6 * (1 + t * 0.05), rot=-4 - t * 0.7, screen=screen, face_down=face_down,
+             vibrate=vib, t=t)
 
 
 def bath_feed(t):
@@ -68,7 +69,7 @@ def eva_angry_feed(t):
 
 def draw(c, t):
     if t < 2.4:
-        U.pov(c, t, cucha_feed(t), zoom=kf(t, [(0, 1.0), (2.4, 1.25)]), center=(1000, 560), hud_kw=dict())
+        U.pov(c, t, cucha_feed(t), zoom=kf(t, [(0, 1.0), (2.4, 1.12)]), center=(980, 470), hud_kw=dict())
     elif t < 4.6:
         tl = t - 2.4
         with U.cam(c, kf(tl, [(0, 1200), (2.2, 1350)]), 470, kf(tl, [(0, 1.4), (2.2, 1.6)])):

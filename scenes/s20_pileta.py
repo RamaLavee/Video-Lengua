@@ -54,20 +54,20 @@ def sink(c, t):
     with layer(c, 1.0, cfilter=COLD_LIMA):
         with U.cam(c, 2260, 520, 2.0):
             L.home_bg(c, t, sky='#b8bcc4')
-            gl = green_light(t, 3.6)
+            gl = green_light(t, 3.0)
             # agua de la canilla
             flow = prog(t, 0.0, 0.3)
             for k in range(4):
                 xo = 2378 + (k - 1.5) * 5 + math.sin(t * 20 + k) * 3
                 line(c, [(xo, 485), (xo + math.sin(t * 13 + k) * 4, 485 + 110 * flow)], '#e8f6ff', 10, 0.55)
             # salpicaduras dentro de la pileta
-            push = math.sin(t * 7) * 6 * (1 - prog(t, 3.0, 4.0))
+            push = math.sin(t * 7) * 6 * (1 - prog(t, 2.4, 3.2))
             for k in range(10):
                 a = rnd(2001, k) * math.pi
-                r = ((t * 140 + k * 40) % 120) * (1 - prog(t, 3.4, 4.2))
+                r = ((t * 140 + k * 40) % 120) * (1 - prog(t, 2.8, 3.6))
                 c.drawCircle(2350 + math.cos(a) * r, 588 - math.sin(a) * r * 0.5, 4, paint('#ffffff', 0.7))
             # puntas de las orejas que asoman y patalean
-            kick = (1 - prog(t, 2.8, 3.6))
+            kick = (1 - prog(t, 2.2, 3.0))
             for side in (-1, 1):
                 ex = 2330 + side * 22 + math.sin(t * 9 + side) * 8 * kick
                 line(c, [(ex, 586), (ex + side * 8, 568 - 10 * kick), (ex + side * 14, 560)], R.BLACK, 12)
@@ -83,7 +83,7 @@ def sink(c, t):
             c.drawRRect(skia.RRect.MakeRectXY(skia.Rect(2120, 592, 2480, 614), 8, 8), paint('#b9c2c8', 1))
             c.drawRRect(skia.RRect.MakeRectXY(skia.Rect(2120, 592, 2480, 614), 8, 8), paint(INK, 0.8, stroke=2.5))
     # la luz verde de la base, vista a través del agua (fuera de la gradación para que conserve el color)
-    gl = green_light(t, 3.6)
+    gl = green_light(t, 3.0)
     if gl > 0:
         with U.cam(c, 2260, 520, 2.0):
             glow(c, 2338, 584, 90, '#3aff6a', 0.8 * gl, blend=skia.BlendMode.kPlus)
@@ -93,7 +93,7 @@ def sink(c, t):
 def wide(c, t):
     """Plano final: la cocina, la canilla abierta, la heladera con la foto de Eva y su conejita."""
     with layer(c, 1.0, cfilter=COLD_LIMA):
-        with U.cam(c, kf(t, [(0, 2500), (3, 2650)]), kf(t, [(0, 520), (3, 500)]), kf(t, [(0, 1.35), (3, 1.05)])):
+        with U.cam(c, kf(t, [(0, 2480), (5.4, 2650)]), kf(t, [(0, 520), (5.4, 500)]), kf(t, [(0, 1.45), (5.4, 1.08)])):
             L.home_bg(c, t, sky='#a8acb6')
             L.fridge_photos(c, t, 6, PR.photo_eva_rabbit, [PR.photo_klaus, PR.photo_eva_rabbit, PR.photo_klaus,
                                                            PR.photo_eva_rabbit, PR.photo_klaus])
@@ -109,6 +109,6 @@ def draw(c, t):
         (3.0, stare, None),
         (1.6, face, ('cut', 0)),
         (2.4, carry, ('cut', 0)),
-        (4.4, sink, ('cut', 0)),
-        (2.6, wide, ('fade', 1.0)),
+        (4.6, sink, ('cut', 0)),
+        (5.4, wide, ('fade', 1.2)),
     ])

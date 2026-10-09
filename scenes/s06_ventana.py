@@ -24,8 +24,8 @@ def draw(c, t):
             with U.cam(c, kf(t, [(0, 2420), (3, 2500)]), kf(t, [(0, 690), (3, 560)]), kf(t, [(0, 1.45), (3, 1.22)])):
                 E.room_bg(c, t, morning=1.0)
                 PR.cucha(c, 2380, 912, front=False)
-                ry = kf(t, [(0, 896), (1.1, 896), (2.2, 640), (3.0, 470)])
-                rx = kf(t, [(0, 2380), (1.1, 2380), (2.2, 2575)])
+                ry = kf(t, [(0, 896), (1.1, 896), (2.2, 650), (3.0, 540)])
+                rx = kf(t, [(0, 2380), (1.1, 2380), (2.2, 2520), (3.0, 2470)])
                 in_cucha = t < 1.15
                 if in_cucha:
                     R.draw(c, rx, ry, 0.62, t, eyes=prog(t, 0.2, 0.7), yaw=0.0)
@@ -64,7 +64,7 @@ def draw(c, t):
         # D: de vuelta en el piso, Emilia mueve la conejita: ¡que la alcen otra vez!
         tl = t - 10.0
         with layer(c, 1.0, cfilter=COOL):
-            with U.cam(c, 2450, 620, 1.3):
+            with U.cam(c, 2450, 585, 1.28):
                 E.room_bg(c, t, sunset=0.7)
                 wig = math.sin(tl * 9) * 60 * pulse(tl, 0.2, 2.0, 0.2)
                 R.draw(c, 2350 + wig, 905, 0.62, tl, yaw=math.sin(tl * 11) * 0.8, ears=math.sin(tl * 10),

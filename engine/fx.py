@@ -58,7 +58,8 @@ def make_paper(path):
         ys = (y0 + np.sin(a) * np.arange(L)).astype(int) % h
         fib[ys, xs] += 1
     fib = gaussian_filter(fib, 0.8)
-    v = 1.0 - 0.075 * n - 0.018 * grain - 0.06 * np.clip(fib, 0, 1)
+    grain = gaussian_filter(grain, 1.2)
+    v = 1.0 - 0.075 * n - 0.007 * grain - 0.05 * np.clip(fib, 0, 1)
     v = np.clip(v, 0, 1)
     rgb = np.stack([v * 1.0, v * 0.985, v * 0.955], -1)
     img = (np.clip(rgb, 0, 1) * 255).astype(np.uint8)

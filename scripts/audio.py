@@ -454,7 +454,7 @@ def build_music():
     for i in range(6):
         mus.add(tt, musicbox(mtof(81) * (1 - 0.006 * i), 0.22 * (1 - i / 7)), 1.0, 0.25)
         tt += 0.55 + i * 0.12
-    mus.add(T('s20', 11.8), pad([mtof(41), mtof(48), mtof(56)], 2.6, 0.32, bright=700, attack=1.0, release=2.0), 1.0)
+    mus.add(T('s20', 10.8), pad([mtof(41), mtof(48), mtof(56)], 3.6, 0.32, bright=700, attack=1.5, release=2.0), 1.0)
     apply_reverb(mus, wet=0.38, dur=2.6, decay=2.6)
     return mus
 
@@ -587,12 +587,12 @@ def build_sfx():
         fx.add(T('s20', 4.7 + i * 0.45), thump(0.25, 85), 1.0)
     fx.add(T('s20', 5.0), chirp_s(0.3), 1.0)
     fx.add(T('s20', 6.9), click(0.4, 500, 2000, 0.03), 1.0)
-    fx.add(T('s20', 7.0), water(7.4, 1.0, 2600), 1.0)
+    fx.add(T('s20', 7.0), water(8.6, 1.0, 2600), 1.0)
     fx.add(T('s20', 7.4), lp(chirp_s(0.45), 900), 1.0)
     fx.add(T('s20', 8.3), lp(chirp_s(0.35), 700), 1.0)
     fx.add(T('s20', 9.1), lp(chirp_s(0.2), 600), 1.0)
-    for k in range(3):
-        fx.add(T('s20', 12.4 + k * 0.9), tone(1900 - k * 120, 0.06, 0.12, 0.002, 0.05), 1.0, 0.2)
+    for k in range(4):
+        fx.add(T('s20', 11.2 + k * 1.1), tone(1900 - k * 120, 0.06, 0.12, 0.002, 0.05), 1.0, 0.2)
     apply_reverb(fx, wet=0.18, dur=0.9, decay=6.0, bright=5000)
     return fx
 

@@ -81,11 +81,8 @@ def draw(c, t):
     lr = (g, g, W * 0.5 - g * 1.5, H - 2 * g)
     rr = (W * 0.5 + g * 0.5, g, W * 0.5 - g * 1.5, H - 2 * g)
     U.panel(c, lr, left, center=(960, 560), zoom=1.0)
-    k = rr[2] / W
-    rh = H * k
-    rect = (rr[0], (H - rh) / 2, rr[2], rh)
-    c.drawRect(skia.Rect(rr[0], rr[1], rr[0] + rr[2], rr[1] + rr[3]), paint('#1d1a22', 1))
-    U.pov(c, t, feed, rect=rect, zoom=zoom, dark=dark, hud_kw=dict(pressed=pressed, eye=eye_state))
+    rect = rr
+    U.pov(c, t, feed, rect=rect, center=(1100, 560), zoom=zoom, dark=dark, hud_kw=dict(pressed=pressed, eye=eye_state))
     U.subtitle(c, t, 2.7, 1.5, seed=41, rect=rect)
     U.subtitle(c, t, 8.0, 1.6, seed=43, rect=rect)
     c.drawRect(skia.Rect(rr[0], rr[1], rr[0] + rr[2], rr[1] + rr[3]), paint(INK, 0.85, stroke=5))

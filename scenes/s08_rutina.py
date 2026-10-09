@@ -55,7 +55,7 @@ def sofa(c, t):
 def escape(c, t):
     """Objetivo: Eva sale de noche y la conejita se escapa debajo de la mesa."""
     with layer(c, 1.0, cfilter=grade_filter(sat=0.9, bright=0.88, tint=(0.94, 0.97, 1.1))):
-        with U.cam(c, kf(t, [(0, 2200), (3.2, 1700)]), 600, 1.2):
+        with U.cam(c, kf(t, [(0, 2200), (3.2, 1700)]), 560, 1.18):
             E.room_bg(c, t, night=0.35)
             rx = kf(t, [(0, 2350), (1.6, 1500), (3.2, 1440)], ease_out)
             R.draw(c, rx, 905, 0.55, t, yaw=-0.9, ears=math.sin(t * 8) * 0.8, chirp=pulse(t, 0.3, 0.7, 0.1) * 0.5)

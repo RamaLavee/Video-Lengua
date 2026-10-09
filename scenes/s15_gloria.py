@@ -44,9 +44,14 @@ def draw(c, t):
         else:
             # Gloria enchufa el cargador junto a la puerta; la conejita duerme ahí
             t3 = tl - 6.4
-            with U.cam(c, 640, 560, 1.32):
+            with U.cam(c, 640 - t3 * 15, 560 + t3 * 12, 1.32 + t3 * 0.08):
                 L.home_bg(c, t)
                 PR.charger(c, 560, 885, 150, state='green' if t3 > 1.0 else None, t=t3)
                 R.draw(c, 560, 872, 0.4, t3, eyes=0.0, clip=None)
-                GLORIA.draw(c, 760, 880, 0.78, view='side', flip=True, t=t3, expr='happy', look=(0.6, 0.6), lean=-10,
-                            hand_L=(180, -300), handshape_L='hold')
+                gx = kf(t3, [(0, 760), (1.2, 760), (2.4, 860)])
+                GLORIA.draw(c, gx, 880, 0.78, view='side', flip=True, t=t3, expr='happy', look=(0.6, 0.6),
+                            lean=kf(t3, [(0, -10), (1.2, -10), (1.8, 0)]),
+                            hand_L=(180, -300) if t3 < 1.2 else (120, -420), handshape_L='hold')
+                if t3 > 1.6:
+                    EMI.draw(c, kf(t3, [(1.6, 1250), (2.6, 1080)]), 880, 0.75, view='side', flip=True, t=t3,
+                             walk=(t3 * 0.8) % 1, expr='tender', look=(0.6, 0.5))

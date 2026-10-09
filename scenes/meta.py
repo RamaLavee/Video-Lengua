@@ -290,7 +290,7 @@ SCENES = [
          sonido='Clic; silencio.',
          funcion='Emilia corta el vínculo con Erfurt.',
          salida='Corte.'),
-    dict(id='s20', titulo='La pileta', dur=14, trans=('cut', 0),
+    dict(id='s20', titulo='La pileta', dur=16, trans=('cut', 0),
          libro='La conejita la mira como juzgándola; Emilia la lleva a la cocina y la ahoga bajo el chorro hasta que '
                'la luz verde deja de titilar (pág. 149).',
          lugar='Lima: escritorio y cocina.',

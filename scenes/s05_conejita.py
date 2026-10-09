@@ -33,7 +33,7 @@ def draw(c, t):
         tl = t - 7.2
         with layer(c, 1.0, cfilter=COOL):
             cx = kf(tl, [(0, 2330), (4.8, 2420)])
-            with U.cam(c, cx, 640, kf(tl, [(0, 1.32), (4.8, 1.38)])):
+            with U.cam(c, cx, 585, kf(tl, [(0, 1.28), (4.8, 1.33)])):
                 E.room_bg(c, tl)
                 rx = kf(tl, [(0, 2120), (1.6, 2120), (3.6, 2330)], ease_io)
                 tilt = kf(tl, [(0, -9), (1.2, -9), (1.8, 4), (2.4, 0)])

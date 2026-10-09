@@ -63,7 +63,7 @@ def night(c, t):
 
     def right(cc):
         with layer(cc, 1.0, cfilter=NIGHT):
-            with U.cam(cc, 2440, 600, 1.25):
+            with U.cam(cc, 2440, 560, 1.22):
                 E.room_bg(cc, t, night=1.0)
                 PR.charger(cc, 2350, 912, 170, state=st, t=t)
                 ry = kf(t, [(0, 640), (0.8, 900)])

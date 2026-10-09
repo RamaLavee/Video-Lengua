@@ -13,7 +13,7 @@ def klaus_feed(t, phase):
             PR.phone(c, 1350, 540, 0.45, rot=80, vibrate=1.0, t=t, screen=U.call_screen('incoming', 3, t))
         else:
             KLAUS_U.draw(c, 1150, 1010, 0.8, view='front', t=t, expr='cold', look=(0, 0.3), turn=0.1,
-                         hand_R=(-90, -950), bend_R=-1, handshape_R='hold',
+                         hand_R=(-108, -925), bend_R=-1, handshape_R='hold',
                          hold_R=lambda cc: PR.phone(cc, -6, -20, 0.4, rot=12))
     return feed
 
